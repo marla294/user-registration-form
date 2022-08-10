@@ -26,8 +26,8 @@ export default function Form({users, setUsers}) {
 
   return <form onSubmit={(e) => {
     e.preventDefault();
-    console.log('clicked submit');
-    let newUsers = [...users, inputs];
+    const newUser = {...inputs, id: Math.random()}
+    const newUsers = [...users, newUser];
     setUsers(newUsers);
   }}>
     <h3>User Registration Form</h3>

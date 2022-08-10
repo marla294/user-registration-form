@@ -1,0 +1,22 @@
+.Container {
+  padding: 1rem;
+}
+
+.Header {
+  font-weight: 700;
+}
+
+.Grid-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+}
+
+.Delete-user {
+  padding: 0;
+  margin: 0;
+  width: 2rem;
+  background-color: red;
+  border: 1px solid white;
+  color: white;
+}
