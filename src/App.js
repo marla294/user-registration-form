@@ -1,10 +1,14 @@
 import './App.css';
+import Form from './Form';
+import Grid from './Grid';
 
 function App() {
   return (
-    <form>
-      test
-    </form>
+    <>
+    <Form></Form>
+    <Grid></Grid>
+    </>
+    
   );
 }
 
