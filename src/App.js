@@ -1,12 +1,19 @@
+import { useEffect, useState } from 'react';
 import './App.css';
 import Form from './Form';
 import Grid from './Grid';
 
 function App() {
+  const initial = [];
+  const [users, setUsers] = useState(initial);
+
+  useEffect(() => {
+    setUsers(initial);
+  }, []);
   return (
     <>
-    <Form></Form>
-    <Grid></Grid>
+    <Form users={users} setUsers={setUsers}></Form>
+    <Grid users={users}></Grid>
     </>
     
   );

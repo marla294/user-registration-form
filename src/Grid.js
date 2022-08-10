@@ -1,3 +1,5 @@
-export default function Grid() {
-  return <div>The Grid Component</div>
+export default function Grid({users}) {
+  return <div>
+    {users.map(user => <div>{user?.first}</div>)}
+  </div>
 }

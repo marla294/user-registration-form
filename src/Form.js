@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import './Form.css';
 
-export default function Form() {
+export default function Form({users, setUsers}) {
   const initial = {
     first: '',
     last: '',
@@ -27,6 +27,8 @@ export default function Form() {
   return <form onSubmit={(e) => {
     e.preventDefault();
     console.log('clicked submit');
+    let newUsers = [...users, inputs];
+    setUsers(newUsers);
   }}>
     <h3>User Registration Form</h3>
     <label htmlFor="first" className="Label">
