@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './Form.css';
 
 export default function Form() {
   const initial = {
@@ -27,9 +28,11 @@ export default function Form() {
     e.preventDefault();
     console.log('clicked submit');
   }}>
-    <label htmlFor="first">
+    <h3>User Registration Form</h3>
+    <label htmlFor="first" className="Label">
       First Name
       <input
+        className="Field"
         type="text"
         id="first"
         name="first"
@@ -38,9 +41,10 @@ export default function Form() {
         onChange={handleChange}
       />
     </label>
-    <label htmlFor="last">
+    <label htmlFor="last" className="Label">
       Last Name
       <input
+        className="Field"
         type="text"
         id="last"
         name="last"
@@ -49,9 +53,10 @@ export default function Form() {
         onChange={handleChange}
       />
     </label>
-    <label htmlFor="npi">
+    <label htmlFor="npi" className="Label">
       NPI Number
       <input
+        className="Field"
         type="text"
         id="npi"
         name="npi"
@@ -60,9 +65,10 @@ export default function Form() {
         onChange={handleChange}
       />
     </label>
-    <label htmlFor="address">
+    <label htmlFor="address" className="Label">
       Street Address
       <input
+        className="Field"
         type="text"
         id="address"
         name="address"
@@ -71,9 +77,10 @@ export default function Form() {
         onChange={handleChange}
       />
     </label>
-    <label htmlFor="phone">
+    <label htmlFor="phone" className="Label">
       Phone Number
       <input
+        className="Field"
         type="text"
         id="phone"
         name="phone"
@@ -82,9 +89,10 @@ export default function Form() {
         onChange={handleChange}
       />
     </label>
-    <label htmlFor="email">
+    <label htmlFor="email" className="Label">
       Email Address
       <input
+        className="Field"
         type="text"
         id="email"
         name="email"

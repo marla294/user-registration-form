@@ -1,0 +1,20 @@
+
+.Field {
+  width: 100%;
+  margin-bottom: 0.25rem;
+}
+
+.Label {
+  display: block;
+  font-size: .8rem;
+}
+
+button {
+  width: auto;
+  padding: 0.5rem;
+  margin-top: 1rem; 
+}
+
+form {
+  padding: 1rem;
+}
