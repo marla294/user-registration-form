@@ -11,10 +11,22 @@ export default function Form({users, setUsers}) {
     email: ''
   };
   const [inputs, setInputs] = useState(initial);
+  const [isEnabled, setIsEnabled] = useState(false);
 
   useEffect(() => {
     setInputs(initial);
   }, []);
+
+  useEffect(() => {
+    const {first, last, npi, address, phone, email} = inputs;
+    if (first.length > 0 && last.length > 0 && npi.length > 0 && address.length > 0 && phone.length > 0 && email.length > 0) {
+      setIsEnabled(true);
+    }
+    else {
+      setIsEnabled(false);
+    }
+
+  }, [inputs]);
 
   function handleChange(e) {
     let { value, name } = e.target;
@@ -24,13 +36,19 @@ export default function Form({users, setUsers}) {
     });
   }
 
+  function resetForm() {
+    setInputs(initial);
+  }
+
   return <form onSubmit={(e) => {
     e.preventDefault();
     const newUser = {...inputs, id: Math.random()}
     const newUsers = [...users, newUser];
     setUsers(newUsers);
+    resetForm();
   }}>
     <h3>User Registration Form</h3>
+    <p>All inputs required to submit form</p>
     <label htmlFor="first" className="Label">
       First Name
       <input
@@ -103,6 +121,6 @@ export default function Form({users, setUsers}) {
         onChange={handleChange}
       />
     </label>
-    <button type="submit">Submit</button>
+    <button type="submit" disabled={!isEnabled}>Submit</button>
   </form>
 }
